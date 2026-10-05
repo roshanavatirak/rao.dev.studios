@@ -24,7 +24,7 @@ export const Footer = ({ onNavigate, latestVersion }) => {
           {/* Brand info */}
           <div className="md:col-span-2 space-y-4">
             <a 
-              href="/regentmoney/"
+              href="/"
               onClick={(e) => handleLink(e, '/')}
               className="inline-flex items-center gap-3 group"
             >
@@ -56,7 +56,7 @@ export const Footer = ({ onNavigate, latestVersion }) => {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <a 
-                  href="/regentmoney/"
+                  href="/"
                   onClick={(e) => handleLink(e, '/')} 
                   className="hover:text-white transition inline-block"
                 >
@@ -65,7 +65,7 @@ export const Footer = ({ onNavigate, latestVersion }) => {
               </li>
               <li>
                 <a 
-                  href="/regentmoney/#features"
+                  href="/#features"
                   onClick={(e) => handleLink(e, '/', 'features')} 
                   className="hover:text-white transition inline-block"
                 >
@@ -74,7 +74,7 @@ export const Footer = ({ onNavigate, latestVersion }) => {
               </li>
               <li>
                 <a 
-                  href="/regentmoney/#security"
+                  href="/#security"
                   onClick={(e) => handleLink(e, '/', 'security')} 
                   className="hover:text-white transition inline-block"
                 >
@@ -92,7 +92,7 @@ export const Footer = ({ onNavigate, latestVersion }) => {
             <ul className="space-y-2.5 text-xs sm:text-sm">
               <li>
                 <a 
-                  href="/regentmoney/privacy"
+                  href="/privacy"
                   onClick={(e) => handleLink(e, '/privacy')} 
                   className="hover:text-white transition text-[#10B981] font-semibold inline-flex items-center gap-1.5"
                 >
@@ -102,7 +102,7 @@ export const Footer = ({ onNavigate, latestVersion }) => {
               </li>
               <li>
                 <a 
-                  href="/regentmoney/terms"
+                  href="/terms"
                   onClick={(e) => handleLink(e, '/terms')} 
                   className="hover:text-white transition inline-block font-medium"
                 >

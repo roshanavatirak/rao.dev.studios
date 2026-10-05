@@ -81,7 +81,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0E14] text-white flex flex-col font-sans selection:bg-[#10B981] selection:text-white">
+    <div className="min-h-screen bg-[#0B0E14] text-white flex flex-col font-sans selection:bg-[#10B981] selection:text-white w-full overflow-x-hidden">
       <Navbar currentPath={currentRoute} onNavigate={navigateTo} downloadUrl={release.downloadUrl} />
       
       <main className="flex-grow">

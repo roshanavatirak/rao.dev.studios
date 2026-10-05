@@ -33,13 +33,13 @@ export const HomePage = ({ onNavigate, release = {} }) => {
   ];
 
   return (
-    <div className="space-y-24 md:space-y-36 pb-24">
+    <div className="space-y-24 md:space-y-36 pb-24 overflow-x-hidden w-full">
       
       {/* 1. Hero Section */}
-      <section className="relative pt-8 md:pt-16 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+      <section className="relative pt-8 md:pt-16 px-4 sm:px-6 max-w-5xl mx-auto text-center overflow-hidden w-full">
         
         {/* Subtle emerald ambient aura */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#10B981]/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[500px] h-[280px] sm:h-[500px] bg-[#10B981]/10 rounded-full blur-[90px] sm:blur-[120px] pointer-events-none -z-10" />
 
         {/* Studio Badge */}
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-semibold text-slate-300 mb-8 backdrop-blur-md shadow-sm">

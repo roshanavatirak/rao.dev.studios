@@ -46,8 +46,8 @@ export const Navbar = ({ currentPath, onNavigate, downloadUrl }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0B0E14]/90 border-b border-white/[0.08]" ref={menuRef}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-[#0B0E14]/90 border-b border-white/[0.08] w-full" ref={menuRef}>
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
         
         {/* Brand Logo */}
         <a 

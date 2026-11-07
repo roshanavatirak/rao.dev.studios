@@ -110,6 +110,15 @@ export const Footer = ({ onNavigate, latestVersion }) => {
                 </a>
               </li>
               <li>
+                <a
+                  href="/regent-money/delete-account"
+                  onClick={(e) => handleLink(e, '/delete-account')}
+                  className="hover:text-white transition inline-block font-medium"
+                >
+                  Delete Account
+                </a>
+              </li>
+              <li>
                 <a 
                   href="mailto:roshanawatirak@gmail.com" 
                   className="hover:text-white transition inline-block"

@@ -4,6 +4,7 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { DeleteAccountPage } from './pages/DeleteAccountPage';
 import { fetchLatestRelease } from './services/releaseService';
 
 export function App() {
@@ -31,6 +32,9 @@ export function App() {
     if (hash === '#terms' || path.endsWith('/terms') || path === '/regentmoney/terms') {
       return '/terms';
     }
+    if (hash === '#delete-account' || path.endsWith('/delete-account')) {
+      return '/delete-account';
+    }
     return '/';
   };
 
@@ -42,6 +46,8 @@ export function App() {
       document.title = "Privacy Policy & Zero-Tolerance Guarantee | Regent Money — RAO DEV STUDIOS";
     } else if (currentRoute === '/terms') {
       document.title = "Terms of Service & Legal Framework | Regent Money — RAO DEV STUDIOS";
+    } else if (currentRoute === '/delete-account') {
+      document.title = "Delete Regent Money Account";
     } else {
       document.title = "Regent Money — Intelligent Personal Wealth by RAO DEV STUDIOS";
     }
@@ -69,7 +75,10 @@ export function App() {
     const currentPath = window.location.pathname;
     let newPath = route;
 
-    if (currentPath.includes('/regentmoney') || currentPath.startsWith('/regentmoney')) {
+    if (route === '/delete-account') {
+      // Canonical public URL used in Google Play Console
+      newPath = '/regent-money/delete-account';
+    } else if (currentPath.includes('/regentmoney') || currentPath.startsWith('/regentmoney')) {
       newPath = route === '/' ? '/regentmoney/' : `/regentmoney${route}`;
     }
 
@@ -89,6 +98,8 @@ export function App() {
           <PrivacyPage onNavigate={navigateTo} />
         ) : currentRoute === '/terms' ? (
           <TermsPage onNavigate={navigateTo} />
+        ) : currentRoute === '/delete-account' ? (
+          <DeleteAccountPage onNavigate={navigateTo} />
         ) : (
           <HomePage onNavigate={navigateTo} release={release} />
         )}

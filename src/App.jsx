@@ -43,7 +43,7 @@ export function App() {
   // Update dynamic document title for SEO & professionalism
   useEffect(() => {
     if (currentRoute === '/privacy') {
-      document.title = "Privacy Policy & Zero-Tolerance Guarantee | Regent Money — RAO DEV STUDIOS";
+      document.title = "Privacy Policy | Regent Money — RAO DEV STUDIOS";
     } else if (currentRoute === '/terms') {
       document.title = "Terms of Service & Legal Framework | Regent Money — RAO DEV STUDIOS";
     } else if (currentRoute === '/delete-account') {

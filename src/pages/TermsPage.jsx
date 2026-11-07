@@ -111,6 +111,9 @@ export const TermsPage = ({ onNavigate }) => {
           <p>
             By downloading, installing, launching, or logging into Regent Money, you acknowledge that you have read, understood, and agreed to be bound by these Terms and our <a href="/regentmoney/privacy" onClick={(e) => { e.preventDefault(); onNavigate('/privacy'); }} className="text-[#10B981] underline">Privacy Policy</a>. If you disagree with any portion of these Terms, you must immediately cease usage and uninstall the application.
           </p>
+          <p>
+            <strong>Age requirement:</strong> Regent Money is for users aged 18 and over. By using the app, you confirm that you are at least 18 years old.
+          </p>
         </section>
 
         {/* Section 2 */}
@@ -160,7 +163,7 @@ export const TermsPage = ({ onNavigate }) => {
             To activate automated expense detection, you may optionally grant Regent Money Android SMS permissions (<code className="text-[#10B981] bg-black/40 px-1.5 py-0.5 rounded text-xs">RECEIVE_SMS</code> and <code className="text-[#10B981] bg-black/40 px-1.5 py-0.5 rounded text-xs">READ_SMS</code>). By enabling this feature, you grant the software a limited, revocable license to process inbound transaction alerts locally.
           </p>
           <div className="space-y-2 text-xs sm:text-sm text-slate-400">
-            <p>• <strong>Strict On-Device Scope:</strong> Regex matching, amount parsing, and merchant classification execute locally on your smartphone processor. Raw personal messages, OTPs, and private chats are discarded from memory without transmission.</p>
+            <p>• <strong>Financial Messages Only:</strong> Only messages from recognised bank, card and payment senders are parsed, on your device. The full SMS text, OTPs and personal messages are not uploaded. The parsed transaction details listed in our <a href="/regentmoney/privacy" onClick={(e) => { e.preventDefault(); onNavigate('/privacy'); }} className="text-[#10B981] underline">Privacy Policy</a> are synced to your account.</p>
             <p>• <strong>Voluntary & Revocable:</strong> You may grant or revoke SMS permissions at any moment in Android System Settings. Manual transaction entry and manual receipt logging remain fully operational without SMS permissions.</p>
           </div>
         </section>
@@ -184,7 +187,7 @@ export const TermsPage = ({ onNavigate }) => {
             <span className="text-[#10B981]">06.</span> Offline Operation, Local Storage & Cloud Sync
           </h2>
           <p>
-            Regent Money is engineered with an offline-first architecture utilizing high-performance, encrypted MMKV key-value storage. When network connectivity is absent, your transactions remain cached and secured on-device. When connectivity resumes, updates synchronize over TLS 1.3 encrypted transport to our hardened database cluster.
+            Regent Money is engineered with an offline-first architecture utilizing high-performance, encrypted MMKV key-value storage. When network connectivity is absent, your transactions remain cached and secured on-device. When connectivity resumes, updates synchronize to our servers over encrypted HTTPS (TLS 1.2 or higher). Some features, such as budgets, analytics and Regent AI, are processed on our servers.
           </p>
           <p className="text-xs text-slate-400">
             While RAO DEV STUDIOS employs automated snapshots and database replication, we recommend exporting your CSV/JSON ledger periodically via the in-app export feature for independent recordkeeping.
@@ -216,8 +219,11 @@ export const TermsPage = ({ onNavigate }) => {
           <div className="p-5 rounded-xl bg-black/40 border border-[#10B981]/30 space-y-2">
             <div className="text-white font-bold text-sm">Purge Procedure:</div>
             <p className="text-xs sm:text-sm text-slate-300">
-              Users can trigger complete account erasure directly from <strong>Settings &gt; Privacy & Security &gt; Delete Account</strong> within the application, or by transmitting a formal purge request to <a href="mailto:roshanawatirak@gmail.com" className="text-[#10B981] underline">roshanawatirak@gmail.com</a>. Upon verification, all associated cloud database rows, synced expense logs, and authentication tokens will be permanently purged within 48 hours.
+              Delete your account in the app from <strong>Profile → Settings → Delete Account</strong>, or email <a href="mailto:roshanawatirak@gmail.com" className="text-[#10B981] underline">roshanawatirak@gmail.com</a> from your registered email address. Your account then enters a 7-day grace period; logging back in during this period cancels the request. After 7 days, your account and associated data are permanently deleted, except for the minimal security record described in our Privacy Policy.
             </p>
+            <a href="/regent-money/delete-account" onClick={(e) => { e.preventDefault(); onNavigate('/delete-account'); }} className="inline-block text-xs sm:text-sm text-[#10B981] underline">
+              Full account deletion instructions
+            </a>
           </div>
         </section>
 
@@ -268,7 +274,7 @@ export const TermsPage = ({ onNavigate }) => {
           <span className="text-xs uppercase font-extrabold text-[#10B981] tracking-wider">Related Legal Charter</span>
           <h3 className="text-xl font-extrabold text-white">Need to review our Cryptographic Privacy Standard?</h3>
           <p className="text-xs sm:text-sm text-slate-400 max-w-xl">
-            Read our complete Zero-Tolerance Guarantee, local SMS isolation specifications, and AES-256 encryption architecture.
+            See what data Regent Money collects, which service providers process it, how SMS is handled, and your privacy rights.
           </p>
         </div>
         <a

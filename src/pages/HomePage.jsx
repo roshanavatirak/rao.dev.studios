@@ -16,11 +16,11 @@ export const HomePage = ({ onNavigate, release = {} }) => {
   const faqs = [
     {
       q: "How does the SMS engine work without invading my personal privacy?",
-      a: "Our engine uses strict on-device heuristics. It only inspects messages originating from registered financial sender IDs (like HDFC, SBI, ICICI, Axis, Paytm). Personal texts from contacts or unknown 10-digit mobile numbers are completely ignored and discarded in RAM. Raw message text is NEVER uploaded to any server or cloud."
+      a: "SMS tracking is optional. When it's on, the app only reads messages from recognised financial sender IDs (like HDFC, SBI, ICICI, Axis, Paytm) and parses them on your phone. Personal texts are ignored. The full SMS text is not uploaded; only the parsed transaction details (such as amount, merchant, date, sender ID and available balance) are synced to your account."
     },
     {
-      q: "Can RAO DEV STUDIOS see my bank balances or passwords?",
-      a: "Never. We do not have access to your bank accounts, OTPs, or passwords. All financial records are encrypted with AES-256 on your local device and transmitted over TLS 1.3 only when syncing your personal profile to our secure backend."
+      q: "Can RAO DEV STUDIOS access my bank account or passwords?",
+      a: "No. Regent Money never connects to your bank account and never stores your OTPs or banking passwords. Your data is encrypted on your device, sent to our servers over HTTPS, and sensitive transaction fields are additionally encrypted on our servers."
     },
     {
       q: "Why do you use Google Sign-In?",
@@ -28,7 +28,7 @@ export const HomePage = ({ onNavigate, release = {} }) => {
     },
     {
       q: "How do I permanently delete my account and data?",
-      a: "You have complete data sovereignty. Send an email to roshanawatirak@gmail.com with your registered email, and our team will permanently erase all your synced database records within 48 hours."
+      a: "In the app, go to Profile → Settings → Delete Account, or email roshanawatirak@gmail.com from your registered email address. Your account enters a 7-day grace period (logging back in cancels it) and is then permanently deleted. See raodevstudios.in/regent-money/delete-account for details."
     }
   ];
 
@@ -95,12 +95,12 @@ export const HomePage = ({ onNavigate, release = {} }) => {
             <div className="text-xs text-slate-400 mt-1 font-medium">Hardware-Backed KeyStore</div>
           </div>
           <div className="text-center p-2 border-l border-white/[0.06]">
-            <div className="text-xl sm:text-2xl font-extrabold text-[#10B981]">TLS 1.3</div>
-            <div className="text-xs text-slate-400 mt-1 font-medium">Forced Transport Security</div>
+            <div className="text-xl sm:text-2xl font-extrabold text-[#10B981]">HTTPS</div>
+            <div className="text-xs text-slate-400 mt-1 font-medium">Encrypted in Transit</div>
           </div>
           <div className="text-center p-2 border-l-0 md:border-l border-white/[0.06]">
-            <div className="text-xl sm:text-2xl font-extrabold text-white">Local-First</div>
-            <div className="text-xs text-slate-400 mt-1 font-medium">On-Device RAM Engine</div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white">On-Device</div>
+            <div className="text-xs text-slate-400 mt-1 font-medium">SMS Parsing</div>
           </div>
           <div className="text-center p-2 border-l border-white/[0.06]">
             <div className="text-xl sm:text-2xl font-extrabold text-[#10B981]">Zero Ads</div>
@@ -233,9 +233,9 @@ export const HomePage = ({ onNavigate, release = {} }) => {
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
             </div>
-            <h3 className="text-xl font-bold text-white">2. Hardened Transport Encryption (TLS 1.3)</h3>
+            <h3 className="text-xl font-bold text-white">2. Encrypted Transport (HTTPS)</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              When syncing your profile across devices, data travels exclusively through modern Transport Layer Security (TLS 1.3 / HTTPS) pipelines with 2048-bit RSA/ECDSA encryption. Plaintext or insecure network requests are unconditionally rejected by edge firewalls.
+              All traffic between the app and our servers is encrypted with HTTPS (TLS 1.2 or higher). Sensitive transaction fields such as amount and merchant are additionally encrypted with AES-256-GCM on our servers.
             </p>
           </div>
 
@@ -248,7 +248,7 @@ export const HomePage = ({ onNavigate, release = {} }) => {
             </div>
             <h3 className="text-xl font-bold text-white">3. Isolated On-Device SMS Engine</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Our parser operates strictly inside your phone’s temporary memory. It inspects only authorized financial institution Sender IDs (Banks, UPI, Cards) to extract transaction amounts. <strong>Raw messages, personal chats, OTPs, and verification PINs never touch our servers or leave your device.</strong>
+              SMS messages are parsed on your phone, and only from recognised financial sender IDs (banks, UPI, cards). <strong>The full SMS text, personal chats, OTPs and PINs are not uploaded.</strong> Only the parsed transaction details are synced to your account.
             </p>
           </div>
 
@@ -261,7 +261,7 @@ export const HomePage = ({ onNavigate, release = {} }) => {
             </div>
             <h3 className="text-xl font-bold text-white">4. Zero Monetization & Complete Data Sovereignty</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              RAO DEV STUDIOS does not monetize by selling your financial trends to third parties, lenders, or data brokers. We display zero third-party advertisements and embed zero tracking SDKs. You retain full rights to trigger a permanent, irreversible purge of your account at any time.
+              RAO DEV STUDIOS does not monetize by selling your financial trends to third parties, lenders, or data brokers. We show no ads and embed no advertising or tracking SDKs. The service providers we use to run features like Regent AI are listed in our Privacy Policy. You can permanently delete your account at any time.
             </p>
           </div>
 
@@ -288,7 +288,7 @@ export const HomePage = ({ onNavigate, release = {} }) => {
                   <td className="py-4 pr-6 font-semibold text-white">SMS Message Processing</td>
                   <td className="py-4 px-6 text-slate-400">Uploaded to cloud servers for text scraping</td>
                   <td className="py-4 pl-6 text-white font-medium flex items-center gap-2">
-                    <span className="text-[#10B981]">✓</span> 100% On-Device (Raw texts never leave phone)
+                    <span className="text-[#10B981]">✓</span> Parsed on-device (full SMS text not uploaded)
                   </td>
                 </tr>
                 <tr>
@@ -307,9 +307,9 @@ export const HomePage = ({ onNavigate, release = {} }) => {
                 </tr>
                 <tr>
                   <td className="py-4 pr-6 font-semibold text-white">Account & Data Purge</td>
-                  <td className="py-4 px-6 text-slate-400">Complicated retention, ghost records retained</td>
+                  <td className="py-4 px-6 text-slate-400">Complicated, email-only deletion requests</td>
                   <td className="py-4 pl-6 text-white font-medium flex items-center gap-2">
-                    <span className="text-[#10B981]">✓</span> 48-Hour complete server-wide data wipe
+                    <span className="text-[#10B981]">✓</span> In-app deletion, permanent after a 7-day grace period
                   </td>
                 </tr>
               </tbody>

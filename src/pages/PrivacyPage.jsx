@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CONTACT_EMAIL = 'roshanawatirak@gmail.com';
-const LAST_UPDATED = '7 November 2026';
+const LAST_UPDATED = '8 November 2026';
 
 const SectionTitle = ({ num, children }) => (
   <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-3">
@@ -25,7 +25,7 @@ const collected = [
     title: 'Account & profile information',
     items: [
       'Name, email address and phone number.',
-      'Date of birth, gender and occupation (if you provide them).',
+      'Date of birth, gender, occupation and income (if you provide them).',
       'Profile photo (if you upload one).',
       'Google account identifier, name and email when you use Google Sign-In.',
     ],
@@ -75,7 +75,7 @@ const providers = [
 ];
 
 const deletedData = [
-  'Profile information (name, email, phone number, date of birth, gender and occupation) and profile photos.',
+  'Profile information (name, email, phone number, date of birth, gender, occupation and income) and profile photos.',
   'Transactions, income records, bank and card details, budgets and goals.',
   'Split expenses and peer records.',
   'AI chat history and notifications.',

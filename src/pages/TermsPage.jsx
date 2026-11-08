@@ -69,7 +69,7 @@ export const TermsPage = ({ onNavigate }) => {
           These Terms of Service define the legally binding relationship between you and <strong>RAO DEV STUDIOS</strong> regarding the use of <strong>Regent Money</strong>. We operate with radical transparency, non-custodial boundaries, and complete cryptographic respect for your financial records.
         </p>
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-slate-400 pt-3 border-t border-white/[0.06]">
-          <span>Effective: <strong>October 2026</strong></span>
+          <span>Effective: <strong>November 2026</strong></span>
           <span>•</span>
           <span>Publisher: <strong>RAO DEV STUDIOS</strong></span>
           <span>•</span>
@@ -190,7 +190,7 @@ export const TermsPage = ({ onNavigate }) => {
             Regent Money is engineered with an offline-first architecture utilizing high-performance, encrypted MMKV key-value storage. When network connectivity is absent, your transactions remain cached and secured on-device. When connectivity resumes, updates synchronize to our servers over encrypted HTTPS (TLS 1.2 or higher). Some features, such as budgets, analytics and Regent AI, are processed on our servers.
           </p>
           <p className="text-xs text-slate-400">
-            While RAO DEV STUDIOS employs automated snapshots and database replication, we recommend exporting your CSV/JSON ledger periodically via the in-app export feature for independent recordkeeping.
+            RAO DEV STUDIOS keeps automated backups of our database, so your synced records are restored when you sign in on a new or replaced phone.
           </p>
         </section>
 

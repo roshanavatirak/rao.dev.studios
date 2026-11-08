@@ -5,7 +5,7 @@ const MAIL_SUBJECT = 'Delete my Regent Money account';
 const MAILTO = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(MAIL_SUBJECT)}`;
 
 const deletedData = [
-  'Profile information (name, email, phone number, date of birth, gender and occupation).',
+  'Profile information (name, email, phone number, date of birth, gender, occupation and income).',
   'Profile photographs.',
   'Financial transactions and income records.',
   'Bank and card details stored in your account.',
@@ -21,7 +21,7 @@ const appSteps = [
   <>Navigate to <strong className="text-white">Profile → Settings</strong>.</>,
   <>Select <strong className="text-white">Delete Account</strong>.</>,
   <>Choose your reason for deletion.</>,
-  <>Confirm your request using your account password.</>,
+  <>Confirm your request. If you signed up with email, enter your account password.</>,
 ];
 
 const SectionTitle = ({ num, children }) => (

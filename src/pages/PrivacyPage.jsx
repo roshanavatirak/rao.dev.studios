@@ -1,7 +1,8 @@
 import React from 'react';
 
 const CONTACT_EMAIL = 'roshanawatirak@gmail.com';
-const LAST_UPDATED = '8 November 2026';
+const LAST_UPDATED = '14 November 2026';
+const POLICY_VERSION = '2.5';
 
 const SectionTitle = ({ num, children }) => (
   <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-3">
@@ -62,6 +63,15 @@ const collected = [
       'Security and login data needed to protect your account, such as bot-protection checks at sign-in.',
     ],
   },
+  {
+    title: 'How you found Regent Money',
+    items: [
+      'Once, after you sign in, the app records how it was installed: from a friend’s invite link, a promotion link, an ad, or the Play Store directly. This comes from Google Play’s install referrer.',
+      'For invite and promotion links, Google Play Integrity also confirms the request came from the genuine app on a genuine device.',
+      'We do not store your IP address, advertising ID or any device identifier for this.',
+      'If a friend invited you, they see only a total number of friends who joined, never your name. There is no reward for inviting.',
+    ],
+  },
 ];
 
 const providers = [
@@ -70,6 +80,7 @@ const providers = [
   { name: 'Expo (push notifications)', purpose: 'Delivering push notifications to your device.', data: 'Push notification token and notification content.' },
   { name: 'Google (Gmail) and Brevo', purpose: 'Sending account and service emails, such as verification and security emails.', data: 'Your email address, name and the email content.' },
   { name: 'Google Sign-In', purpose: 'Signing in with your Google account.', data: 'Your Google account identifier, name and email address.' },
+  { name: 'Google Play (install referrer and Play Integrity)', purpose: 'Telling us how the app was installed, and confirming that an invite or promotion install came from the genuine app on a genuine device.', data: 'An integrity token created by Google Play on your phone, which we send back to Google to check. Google Play evaluates the app and device on your phone under its own terms.' },
   { name: 'Cloudflare Turnstile', purpose: 'Bot and abuse protection on sign-in.', data: 'Technical information about the sign-in request, such as IP address and browser/device signals.' },
   { name: 'Cloud hosting and database providers', purpose: 'Running our backend and storing your account data.', data: 'All account data you sync to Regent Money, stored on our behalf.' },
 ];
@@ -79,6 +90,7 @@ const deletedData = [
   'Transactions, income records, bank and card details, budgets and goals.',
   'Split expenses and peer records.',
   'AI chat history and notifications.',
+  'The record of how you installed the app, and your invite link.',
   'Uploaded bank statements, documents and screenshots.',
 ];
 
@@ -154,6 +166,8 @@ export const PrivacyPage = ({ onNavigate }) => {
         </p>
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-slate-400 pt-3 border-t border-white/[0.06]">
           <span>Last updated: <strong>{LAST_UPDATED}</strong></span>
+          <span>•</span>
+          <span>Version: <strong>{POLICY_VERSION}</strong></span>
           <span>•</span>
           <span>Publisher: <strong>RAO DEV STUDIOS</strong></span>
           <span>•</span>
@@ -246,7 +260,8 @@ export const PrivacyPage = ({ onNavigate }) => {
             <li>To run Regent AI and to read statements and screenshots you upload.</li>
             <li>To sync your data across your devices and keep it backed up.</li>
             <li>To send notifications and service emails, such as verification, security and account-deletion emails.</li>
-            <li>To keep the service secure, prevent fraud and abuse, and fix bugs you report.</li>
+            <li>To understand how people find the app (friend invites, promotions or the Play Store) and to count invites, without showing anyone who joined.</li>
+            <li>To keep the service secure, prevent fraud and abuse (including fake invites), and fix bugs you report.</li>
             <li>To comply with legal obligations.</li>
           </ul>
           <p>

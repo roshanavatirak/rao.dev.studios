@@ -1,8 +1,8 @@
 import React from 'react';
 
 const CONTACT_EMAIL = 'roshanawatirak@gmail.com';
-const LAST_UPDATED = '14 November 2026';
-const POLICY_VERSION = '2.5';
+const LAST_UPDATED = '16 November 2026';
+const POLICY_VERSION = '2.6';
 
 const SectionTitle = ({ num, children }) => (
   <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-3">
@@ -55,6 +55,13 @@ const collected = [
     ],
   },
   {
+    title: 'Voice (only if you use the microphone)',
+    items: [
+      'What you say to Regent AI chat or voice entry, as text.',
+      'For voice entry only, when your phone can’t recognise speech: the recording, sent once to be turned into text and not stored.',
+    ],
+  },
+  {
     title: 'Device & app information',
     items: [
       'Push notification token, so we can send you notifications.',
@@ -75,7 +82,8 @@ const collected = [
 ];
 
 const providers = [
-  { name: 'Groq, Mistral AI and Google Gemini', purpose: 'AI processing for Regent AI chat, transaction categorisation, and reading uploaded statements and screenshots.', data: 'Transaction data, AI chat messages, uploaded screenshots and statement text needed for the request.' },
+  { name: 'Groq, Mistral AI and Google Gemini', purpose: 'AI processing for Regent AI chat, voice entries, transaction categorisation, and reading uploaded statements and screenshots.', data: 'Transaction data, AI chat messages, the text of voice entries, uploaded screenshots and statement text needed for the request.' },
+  { name: 'Sarvam AI, Groq and Google Gemini (speech-to-text)', purpose: 'Turning voice entry recordings into text, only when your phone can’t recognise speech itself.', data: 'The voice recording, sent once for that request. We do not store it.' },
   { name: 'Cloudinary', purpose: 'Storing and serving images.', data: 'Profile photos and images you upload.' },
   { name: 'Expo (push notifications)', purpose: 'Delivering push notifications to your device.', data: 'Push notification token and notification content.' },
   { name: 'Google (Gmail) and Brevo', purpose: 'Sending account and service emails, such as verification and security emails.', data: 'Your email address, name and the email content.' },
@@ -98,7 +106,7 @@ export const PrivacyPage = ({ onNavigate }) => {
   const sections = [
     { id: 'scope', title: '1. Who We Are' },
     { id: 'collect', title: '2. Information We Collect' },
-    { id: 'sms-engine', title: '3. SMS Processing' },
+    { id: 'sms-engine', title: '3. SMS & Microphone' },
     { id: 'use', title: '4. How We Use It' },
     { id: 'providers', title: '5. Service Providers' },
     { id: 'security', title: '6. Security' },
@@ -202,6 +210,7 @@ export const PrivacyPage = ({ onNavigate }) => {
           <li>We do not sell or rent your personal or financial data, and we do not show ads.</li>
           <li>We share data only with the service providers listed in Section 5, and only so they can run features of the app for us.</li>
           <li>SMS tracking is optional. We only read messages from recognised financial senders, and we do not upload raw SMS text.</li>
+          <li>The microphone is optional and on only while you speak to the app. Voice recordings are never stored.</li>
           <li>You can delete your account in the app or by email. Deletion becomes permanent after a 7-day grace period.</li>
         </ul>
       </div>
@@ -239,7 +248,7 @@ export const PrivacyPage = ({ onNavigate }) => {
 
         {/* 3 */}
         <section id="sms-engine" className="space-y-4 p-6 sm:p-8 rounded-2xl bg-[#151922] border border-white/[0.08] scroll-mt-24">
-          <SectionTitle num="03">SMS Processing</SectionTitle>
+          <SectionTitle num="03">SMS & Microphone Permissions</SectionTitle>
           <p>
             If you turn on automatic transaction tracking, Regent Money asks for the <Code>RECEIVE_SMS</Code> and <Code>READ_SMS</Code> permissions. SMS tracking is optional. The app works fully with manual entry if you don't grant them.
           </p>
@@ -250,6 +259,19 @@ export const PrivacyPage = ({ onNavigate }) => {
             <li><strong className="text-white">What is not kept.</strong> One-time passwords (OTPs), PINs and login codes are not extracted or stored.</li>
             <li><strong className="text-white">Your control.</strong> You can turn off SMS tracking in the app or revoke the SMS permission in Android Settings at any time.</li>
           </ul>
+
+          <h3 className="text-white font-bold text-base sm:text-lg pt-4">Microphone & Voice</h3>
+          <p>
+            Voice entry and the mic in Regent AI chat ask for the <Code>RECORD_AUDIO</Code> (microphone) permission. It is optional. Everything in the app can be typed instead.
+          </p>
+          <ul className="list-disc pl-5 space-y-2 text-xs sm:text-sm text-slate-300">
+            <li><strong className="text-white">Only while you use it.</strong> The microphone is on only while you are speaking to the app. It never listens in the background.</li>
+            <li><strong className="text-white">Regent AI chat.</strong> Your speech is turned into text on your phone. The audio never leaves your phone; the text is sent like any typed chat message.</li>
+            <li><strong className="text-white">Voice entry.</strong> The app tries your phone's speech recognition first. If your phone can't recognise speech, or you ask to speak again, the recording is sent once to a speech service (Section 5) to turn it into text.</li>
+            <li><strong className="text-white">What is not kept.</strong> Voice recordings are not stored on our servers and are deleted from your phone right after they are processed.</li>
+            <li><strong className="text-white">What is used.</strong> The text of what you said may be sent to our AI providers to read the amount, merchant and type of the transaction.</li>
+            <li><strong className="text-white">Your control.</strong> You can revoke the microphone permission in Android Settings at any time.</li>
+          </ul>
         </section>
 
         {/* 4 */}
@@ -257,7 +279,7 @@ export const PrivacyPage = ({ onNavigate }) => {
           <SectionTitle num="04">How We Use Your Information</SectionTitle>
           <ul className="list-disc pl-5 space-y-2 text-slate-300">
             <li>To provide the app: record and categorise transactions, calculate budgets, goals, split expenses and analytics. Some of this runs on your device and some on our servers.</li>
-            <li>To run Regent AI and to read statements and screenshots you upload.</li>
+            <li>To run Regent AI, turn what you say into transactions, and read statements and screenshots you upload.</li>
             <li>To sync your data across your devices and keep it backed up.</li>
             <li>To send notifications and service emails, such as verification, security and account-deletion emails.</li>
             <li>To understand how people find the app (friend invites, promotions or the Play Store) and to count invites, without showing anyone who joined.</li>

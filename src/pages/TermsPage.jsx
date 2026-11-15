@@ -5,7 +5,7 @@ export const TermsPage = ({ onNavigate }) => {
     { id: 'agreement', title: '1. Agreement to Terms' },
     { id: 'non-custodial', title: '2. Non-Custodial Scope' },
     { id: 'data-sovereignty', title: '3. Data Ownership' },
-    { id: 'sms-engine', title: '4. SMS Processing License' },
+    { id: 'sms-engine', title: '4. SMS & Microphone' },
     { id: 'auth-security', title: '5. Account & Biometrics' },
     { id: 'backups', title: '6. Offline & Sync' },
     { id: 'acceptable-use', title: '7. Acceptable Use' },
@@ -157,7 +157,7 @@ export const TermsPage = ({ onNavigate }) => {
         {/* Section 4 */}
         <section id="sms-engine" className="space-y-4 p-6 sm:p-8 rounded-2xl bg-[#151922] border border-white/[0.08] scroll-mt-24">
           <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-3">
-            <span className="text-[#10B981]">04.</span> SMS Processing & Local Device Permission Grant
+            <span className="text-[#10B981]">04.</span> SMS, Microphone & Local Device Permission Grant
           </h2>
           <p>
             To activate automated expense detection, you may optionally grant Regent Money Android SMS permissions (<code className="text-[#10B981] bg-black/40 px-1.5 py-0.5 rounded text-xs">RECEIVE_SMS</code> and <code className="text-[#10B981] bg-black/40 px-1.5 py-0.5 rounded text-xs">READ_SMS</code>). By enabling this feature, you grant the software a limited, revocable license to process inbound transaction alerts locally.
@@ -165,6 +165,7 @@ export const TermsPage = ({ onNavigate }) => {
           <div className="space-y-2 text-xs sm:text-sm text-slate-400">
             <p>• <strong>Financial Messages Only:</strong> Only messages from recognised bank, card and payment senders are parsed, on your device. The full SMS text, OTPs and personal messages are not uploaded. The parsed transaction details listed in our <a href="/regentmoney/privacy" onClick={(e) => { e.preventDefault(); onNavigate('/privacy'); }} className="text-[#10B981] underline">Privacy Policy</a> are synced to your account.</p>
             <p>• <strong>Voluntary & Revocable:</strong> You may grant or revoke SMS permissions at any moment in Android System Settings. Manual transaction entry and manual receipt logging remain fully operational without SMS permissions.</p>
+            <p>• <strong>Microphone (Optional):</strong> Voice entry and the mic in Regent AI chat require the Android microphone permission (<code className="text-[#10B981] bg-black/40 px-1.5 py-0.5 rounded text-xs">RECORD_AUDIO</code>). The microphone is active only while you are speaking to the app. How voice is processed is explained in our <a href="/regentmoney/privacy" onClick={(e) => { e.preventDefault(); onNavigate('/privacy'); }} className="text-[#10B981] underline">Privacy Policy</a>. You may revoke this permission at any time; everything remains available by typing.</p>
           </div>
         </section>
 

@@ -220,7 +220,7 @@ export const TermsPage = ({ onNavigate }) => {
           <div className="p-5 rounded-xl bg-black/40 border border-[#10B981]/30 space-y-2">
             <div className="text-white font-bold text-sm">Purge Procedure:</div>
             <p className="text-xs sm:text-sm text-slate-300">
-              Delete your account in the app from <strong>Profile → Settings → Delete Account</strong>, or email <a href="mailto:roshanawatirak@gmail.com" className="text-[#10B981] underline">roshanawatirak@gmail.com</a> from your registered email address. Your account then enters a 7-day grace period; logging back in during this period cancels the request. After 7 days, your account and associated data are permanently deleted, except for the minimal security record described in our Privacy Policy.
+              Delete your account in the app from <strong>Profile → Settings → Delete Account</strong>, or email <a href="mailto:privacy@raodevstudios.in" className="text-[#10B981] underline">privacy@raodevstudios.in</a> from your registered email address. Your account then enters a 7-day grace period; logging back in during this period cancels the request. After 7 days, your account and associated data are permanently deleted, except for the minimal security record described in our Privacy Policy.
             </p>
             <a href="/regent-money/delete-account" onClick={(e) => { e.preventDefault(); onNavigate('/delete-account'); }} className="inline-block text-xs sm:text-sm text-[#10B981] underline">
               Full account deletion instructions
@@ -262,7 +262,8 @@ export const TermsPage = ({ onNavigate }) => {
           <div className="p-6 rounded-2xl bg-[#151922] border border-white/[0.08] space-y-2 text-sm">
             <p className="font-extrabold text-white text-base">RAO DEV STUDIOS</p>
             <p className="text-slate-300">Software Product: <strong className="text-white">Regent Money</strong></p>
-            <p className="text-slate-300">Legal Contact: <a href="mailto:roshanawatirak@gmail.com" className="text-[#10B981] underline font-semibold">roshanawatirak@gmail.com</a></p>
+            <p className="text-slate-300">Legal Contact: <a href="mailto:contact@raodevstudios.in" className="text-[#10B981] underline font-semibold">contact@raodevstudios.in</a></p>
+            <p className="text-slate-300">Support: <a href="mailto:support@raodevstudios.in" className="text-[#10B981] underline font-semibold">support@raodevstudios.in</a></p>
             <p className="text-slate-300">Official Portal: <a href="https://raodevstudios.in/regentmoney" className="text-[#10B981] underline">raodevstudios.in/regentmoney</a></p>
           </div>
         </section>

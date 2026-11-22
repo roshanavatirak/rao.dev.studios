@@ -28,7 +28,7 @@ export const HomePage = ({ onNavigate, release = {} }) => {
     },
     {
       q: "How do I permanently delete my account and data?",
-      a: "In the app, go to Profile → Settings → Delete Account, or email roshanawatirak@gmail.com from your registered email address. Your account enters a 7-day grace period (logging back in cancels it) and is then permanently deleted. See raodevstudios.in/regent-money/delete-account for details."
+      a: "In the app, go to Profile → Settings → Delete Account, or email privacy@raodevstudios.in from your registered email address. Your account enters a 7-day grace period (logging back in cancels it) and is then permanently deleted. See raodevstudios.in/regent-money/delete-account for details."
     }
   ];
 

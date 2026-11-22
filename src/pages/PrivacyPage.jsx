@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CONTACT_EMAIL = 'roshanawatirak@gmail.com';
-const LAST_UPDATED = '16 November 2026';
-const POLICY_VERSION = '2.6';
+const CONTACT_EMAIL = 'privacy@raodevstudios.in';
+const LAST_UPDATED = '23 November 2026';
+const POLICY_VERSION = '2.7';
 
 const SectionTitle = ({ num, children }) => (
   <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight flex items-center gap-3">

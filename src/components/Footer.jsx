@@ -120,10 +120,10 @@ export const Footer = ({ onNavigate, latestVersion }) => {
               </li>
               <li>
                 <a 
-                  href="mailto:roshanawatirak@gmail.com" 
+                  href="mailto:support@raodevstudios.in" 
                   className="hover:text-white transition inline-block"
                 >
-                  roshanawatirak@gmail.com
+                  support@raodevstudios.in
                 </a>
               </li>
               <li>

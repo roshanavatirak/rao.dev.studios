@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SUPPORT_EMAIL = 'roshanawatirak@gmail.com';
+const SUPPORT_EMAIL = 'privacy@raodevstudios.in';
 const MAIL_SUBJECT = 'Delete my Regent Money account';
 const MAILTO = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(MAIL_SUBJECT)}`;
 
